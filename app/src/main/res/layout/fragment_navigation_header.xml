@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp">
+
+        <com.pkmmte.view.CircularImageView
+            android:id="@+id/image_profile"
+            android:layout_width="72dp"
+            android:layout_height="96dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_person"
+            android:gravity="bottom"
+            android:layout_margin="16dp"
+            app:border="true"
+            app:border_color="@color/colorWhite"
+            app:border_width="4dp"
+            app:shadow="true"/>
+
+
+
+        <LinearLayout
+            android:theme="@style/Theme.AppCompat.Light"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/image_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Welcome"
+                android:textColor="@color/colorWhite"
+                android:gravity="right"
+                style="@style/Base.TextAppearance.AppCompat.Large"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mr.Baby Johnson"
+                android:textColor="@color/colorWhite"
+                android:gravity="right"
+                style="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:gravity="right"
+                android:background="@color/colorAccent"
+                style="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/email"
+                android:textColor="@color/colorWhite"
+                android:gravity="right"
+                style="@style/Base.TextAppearance.AppCompat.Small"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

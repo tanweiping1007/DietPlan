@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:padding="16dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_width="match_parent"
+        android:background="#000"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/foodListImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@color/colorPrimary"/>
+
+        <TextView
+            android:id="@+id/foodListTextView1"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:text="Suitable User..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/foodListImageView"/>
+
+        <TextView
+            android:id="@+id/foodListTextView2"
+            android:layout_marginTop="48dp"
+            android:layout_marginLeft="16dp"
+            android:text="Description Food For User..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/foodListImageView"/>
+
+        <TextView
+            android:id="@+id/textVolleyError"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Sorry Enable to Connect into Service"
+            android:textStyle="bold"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

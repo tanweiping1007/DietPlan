@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="app_bar_padding_top">24dp</dimen>
+
+    <dimen name="title">17dp</dimen>
+    <dimen name="categoryID">1dip</dimen>
+    <dimen name="Category_desc">15dip</dimen>
+    <dimen name="year">12dip</dimen>
+
+</resources>
