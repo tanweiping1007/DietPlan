@@ -65,6 +65,10 @@
             android:label="Compose"
             android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
             />
+        <activity
+            android:name="forum.post.Main_Post"
+            android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
+            />
 
 
 

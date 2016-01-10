@@ -1,8 +1,7 @@
-package forum.thread;
+package forum.post;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,18 +15,16 @@ import com.tarucfyp.dietplan.R;
 
 import java.util.List;
 
-import forum.category.Category;
-
 /**
- * Created by weiping-tan on 3/1/2016.
+ * Created by weiping-tan on 10/1/2016.
  */
-public class CustomListView_Thread extends BaseAdapter {
+public class CustomListView_Post extends BaseAdapter {
     private Activity activity;
     private LayoutInflater inflater;
-    private List<Thread> threadItems;
+    private List<Post> threadItems;
     ImageLoader imageLoader = MyApplication.getsInstance().getImageLoader();
 
-    public CustomListView_Thread(Activity activity, List<Thread> threadItems) {
+    public CustomListView_Post(Activity activity, List<Post> threadItems) {
         this.activity = activity;
         this.threadItems = threadItems;
     }
@@ -54,34 +51,42 @@ public class CustomListView_Thread extends BaseAdapter {
             inflater = (LayoutInflater) activity
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if (convertView == null)
-            convertView = inflater.inflate(R.layout.custom_listview_thread_layout, null);
+            convertView = inflater.inflate(R.layout.custom_listview_post_layout, null);
 
         if (imageLoader == null)
             imageLoader = MyApplication.getsInstance().getImageLoader();
         NetworkImageView thumbnail = (NetworkImageView) convertView
-                .findViewById(R.id.thumbnail_thread);
-        TextView title = (TextView) convertView.findViewById(R.id.title_thread);
-        TextView username = (TextView) convertView.findViewById(R.id.username_thread);
-        TextView timestamp = (TextView) convertView.findViewById(R.id.timestamp_thread);
-         TextView threadID = (TextView) convertView.findViewById(R.id.id_thread);
+                .findViewById(R.id.thumbnail_post);
+        TextView title = (TextView) convertView.findViewById(R.id.title_post);
+        TextView username = (TextView) convertView.findViewById(R.id.username_post);
+        TextView timestamp = (TextView) convertView.findViewById(R.id.timestamp_post);
+        TextView message = (TextView) convertView.findViewById(R.id.message_post);
 
 
 
         // getting movie data for the row
-        Thread m  = threadItems.get(position);
+        Post m  = threadItems.get(position);
 
         // thumbnail image
         thumbnail.setImageUrl(m.getThumbnail(), imageLoader);
         // title
-        title.setText(m.getTitle());
-        threadID.setText(String.valueOf(m.getThreadID()));
+        if(m.getTitle() != null)
+        {
+            title.setText(m.getTitle());
+            title.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+            title.setVisibility(View.GONE);
+        }
+        message.setText(m.getMessage());
         // rating
-         username.setText(m.getUsername());
+        username.setText(m.getUsername());
         timestamp.setText(m.getCreated_at());
-  //      CharSequence timeAgo = DateUtils.getRelativeTimeSpanString(
-  //              Long.parseLong(m.getCreated_at()),
-  //              System.currentTimeMillis(), DateUtils.SECOND_IN_MILLIS);
-   //    timestamp.setText(timeAgo);
+        //      CharSequence timeAgo = DateUtils.getRelativeTimeSpanString(
+        //              Long.parseLong(m.getCreated_at()),
+        //              System.currentTimeMillis(), DateUtils.SECOND_IN_MILLIS);
+        //    timestamp.setText(timeAgo);
 
         // genre
 //        String genreStr = "";
